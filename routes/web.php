@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\Admin\FacilityController;
+Route::controller(NewsController::class)->prefix('admin')->group(function() {
+    Route::get('facirity/create', 'add');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
