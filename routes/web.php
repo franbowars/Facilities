@@ -18,8 +18,9 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\Admin\FacilityController;
-Route::controller(NewsController::class)->prefix('admin')->group(function() {
-    Route::get('facirity/create', 'add');
+Route::controller(FacilityController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
+    Route::get('facility/create', 'add')->name('facility.add');
+    Route::post('facility/create', 'create')->name('facility.create');
 });
 
 Auth::routes();
