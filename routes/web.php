@@ -21,6 +21,9 @@ use App\Http\Controllers\Admin\FacilityController;
 Route::controller(FacilityController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('facility/create', 'add')->name('facility.add');
     Route::post('facility/create', 'create')->name('facility.create');
+    Route::get('facility', 'index')->name('facility.index');
+    Route::get('facility/edit', 'edit')->name('facility.edit');
+    Route::post('facility/edit', 'update')->name('facility.update');
 });
 
 Auth::routes();
