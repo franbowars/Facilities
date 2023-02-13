@@ -59,7 +59,7 @@ class FacilityController extends Controller
         if (empty($facilities)) {
             abort(404);
         }
-        return view('admin.facility.edit', ['facility_form' => $facilities]);
+        return view('admin.facility.edit', ['facilities_form' => $facilities]);
     }
     
     public function update(Request $request)
@@ -88,5 +88,15 @@ class FacilityController extends Controller
         $facilities->fill($facilities_form)->save();
 
         return redirect('admin/facility');
+    }
+    public function delete(Request $request)
+    {
+        // 該当するNews Modelを取得
+        $facilities = Facilities::find($request->id);
+
+        // 削除する
+        $facilities->delete();
+
+        return redirect('admin/facility/');
     }
 }

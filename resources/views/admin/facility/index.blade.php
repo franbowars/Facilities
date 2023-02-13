@@ -28,12 +28,12 @@
         <div class="row">
             <div class="list-news col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table-dark">
+                    <table class="table table-secondary table-striped">
                         <thead>
                             <tr>
                                 <th width="5%">ID</th>
-                                <th width="10%">名前</th>
-                                <th width="10%">住所</th>
+                                <th width="8%">名前</th>
+                                <th width="8%">住所</th>
                                 <th width="25%">施設内容</th>
                                 <th width="10%">設備</th>
                                 <th width="25%">料金</th>
@@ -53,6 +53,11 @@
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.facility.edit', ['id' => $facilities->id]) }}">編集</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ route('admin.facility.delete', ['id' => $facilities->id]) }}">削除</a>
                                         </div>
                                     </td>
                                 </tr>

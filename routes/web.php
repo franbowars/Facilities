@@ -24,8 +24,12 @@ Route::controller(FacilityController::class)->prefix('admin')->name('admin.')->m
     Route::get('facility', 'index')->name('facility.index');
     Route::get('facility/edit', 'edit')->name('facility.edit');
     Route::post('facility/edit', 'update')->name('facility.update');
+    Route::get('facility/delete', 'delete')->name('facility.delete');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+use App\Http\Controllers\FacilityController as PublicFacilityController;
+Route::get('/', [PublicFacilityController::class, 'index'])->name('facility.index');
