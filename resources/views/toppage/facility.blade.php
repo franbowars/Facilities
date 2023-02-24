@@ -25,6 +25,7 @@
                             <td class="c-table__td">{{ $facility->fee }}</td>
                     </tr>
                     <tr class="c-table__tr">
+                        <th class="c-table__th c-table__th--gray c-table--left">施設アクセス</th>
                         <th class="c-table__th c-table__th--gray c-table--left">{{ $facility->access }}</th>
                     </tr>
 </section>

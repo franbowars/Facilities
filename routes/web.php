@@ -33,6 +33,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 use App\Http\Controllers\FacilityController as PublicFacilityController;
 Route::get('/', [PublicFacilityController::class, 'index'])->name('facility.index');
-Route::get('/facility/{id}',[PublicFacilityController::class, 'show']);
+Route::get('/facility/{id}',[PublicFacilityController::class, 'show'])->name('toppage.facility');;
 
 
