@@ -1,9 +1,14 @@
 body {
-  color: #FC8;
+  color: #000;
+}
+
+main {
+  color: #000;
+  background-color: #FFF;
 }
 
 .navbar-laravel {
-  background-color: #FC8;
+  background-color: #FC6;
 }
 
 .header .logo {

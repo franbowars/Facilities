@@ -21,27 +21,26 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
     </head>
-    <body>
+        <body>
         <div id="app">
-            {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <div class="col-md-8">
-                        <!--<form action="{{ route('admin.facility.index') }}" method="get">-->
+                        <form action="{{ route('facility.index') }}" method="get">
                             <div class="form-group row">
-                                <label class="col-md-2">タイトル</label>
+                                        <label class="col-md-2">   </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" >
+                                    <input type="text" class="form-control" name="search_word">
                                 </div>
                                 <div class="col-md-2">
                                     @csrf
                                     <input type="submit" class="btn btn-primary" value="検索">
                                 </div>
                             </div>
-                        <!--</form>-->
+                        </form>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

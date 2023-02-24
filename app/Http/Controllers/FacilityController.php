@@ -16,10 +16,24 @@ class FacilityController extends Controller
         } else {
             $headline = null;
         }
+        
+        $search_word = $request->search_word;
+        if ($search_word != '') {
+
+            $posts = Facilities::where('content',$search_word)->get();
+        } else {
+
+            $posts = Facilities::all();
+        }
 
 
-        // news/index.blade.php ファイルを渡している
-        // また View テンプレートに headline、 posts、という変数を渡している
         return view('toppage.index', ['headline' => $headline, 'posts' => $posts]);
+    }
+    
+    public function show($id){
+        // dump($id);
+        $facility = Facilities::findOrfail($id);
+        // dd($facility);
+        return view('toppage.facility',['facility' =>$facility]);
     }
 }
